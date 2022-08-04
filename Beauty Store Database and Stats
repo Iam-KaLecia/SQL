@@ -1,0 +1,29 @@
+--Create a store database
+
+Create Table store(id integer primary key, name text, category text, aisle integer, quantity integer, price integer);
+
+insert into store values
+(1, "shadow stick", "eyes", 2, 10, 5),
+(2, "brow lift", "eyes", 2, 18, 6),
+(3, "blush","face", 3, 20,9),
+(4, "lip liner","lips", 1, 22,10),
+(5, "lip stick","lips", 1, 25,15),
+(6, "foundation", "face", 3,30,9),
+(7, "concealer", "face", 3, 2, 10),
+(8, "nail polish", "other", 4,25,2),
+(9, "eyelashes", "eyes", 2,30,5),
+(10, "lip gloss", "lips", 1,30,5),
+(11, "mascara", "eyes", 2,10,10),
+(12, "eyeliner", "eyes", 2,5,9),
+(13, "primer", "face", 3,10,20),
+(14, "moisturizer", "face", 3,12,25),
+(15, "cleansers", "face", 3,8,25);
+
+--display the database ordered by price.
+select * from store
+order by price desc;
+
+--what is the avg price of items in the face category?
+select AVG(price) "avg face category price"
+FROM store
+where category="face";
